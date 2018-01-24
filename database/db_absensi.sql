@@ -3,12 +3,12 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24 Feb 2017 pada 15.57
+-- Generation Time: 24 Jan 2018 pada 23.18
 -- Versi Server: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET time_zone = "+07:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cendana`
+-- Database: `db_absensi`
 --
 
 -- --------------------------------------------------------
@@ -39,8 +39,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `nama`, `foto`) VALUES
-(1, 'auwfar', 'f0a047143d1da15b630c73f0256d5db0', 'Achmad Chadil Auwfar', 'Koala.jpg'),
-(2, 'ozil', 'f4e404c7f815fc68e7ce8e3c2e61e347', 'Mesut ', 'profil2.jpg');
+(1, 'afif', 'b56776aa98086825550ff0c3fe260907', 'Afif Abdillah Jusuf', 'profil1.jpg'),
+(2, 'apep', '3449cf29b6c2f4bb7892d5c7694ea81f', 'Apep Pep Pep ', 'profil2.jpg');
 
 -- --------------------------------------------------------
 
@@ -82,7 +82,7 @@ INSERT INTO `kota` (`id`, `nama`) VALUES
 (4, 'Tulungagung'),
 (17, 'Jakarta'),
 (21, 'Surabaya'),
-(22, 'Paris');
+(22, 'Bandung');
 
 -- --------------------------------------------------------
 
@@ -114,8 +114,8 @@ INSERT INTO `pegawai` (`id`, `nama`, `telp`, `id_kota`, `id_kelamin`, `id_posisi
 ('7', 'Achmad Chadil Auwfar', '08984119934', 2, 1, 1, 1),
 ('8', 'Rizal Ferdian', '087777284179', 1, 1, 3, 1),
 ('9', 'Redika Angga Pratama', '083834657395', 1, 1, 3, 1),
-('1', 'Tolkha Hasan', '081233072122', 1, 1, 4, 1),
-('2', 'Wawan Dwi Prasetyo', '085745966707', 4, 1, 4, 1);
+('1', 'Hariyanto', '081233072122', 1, 1, 4, 1),
+('2', 'Reanaldo Revanzah Putra', '085745966707', 4, 1, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -159,6 +159,12 @@ ALTER TABLE `kelamin`
 -- Indexes for table `kota`
 --
 ALTER TABLE `kota`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `kota`
+--
+ALTER TABLE `pegawai`
   ADD PRIMARY KEY (`id`);
 
 --
