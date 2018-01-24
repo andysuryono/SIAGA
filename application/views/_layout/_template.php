@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AdminCRUD | Dashboard</title>
+    <title>SIAGA | Dashboard</title>
     <!-- meta -->
     <?php echo @$_meta; ?>
 
