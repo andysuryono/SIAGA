@@ -151,16 +151,26 @@ class Posisi extends AUTH_Controller {
 				include './assets/phpexcel/Classes/PHPExcel/IOFactory.php';
 
 				$inputFileName = './assets/excel/' .$data['file_name'];
-				$objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
-				$sheetData = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
+				$loader = \PHPExcel_IOFactory::createReaderForFile($inputFileName);
+				$loader->setReadDataOnly(true);
+			
+				// Load only the first sheet
+				$worksheets = $loader->listWorkSheetNames($inputFileName);
+				$loader->setLoadSheetsOnly($worksheets[0]);
+			
+				$objPHPExcel = $loader->load($inputFileName);
+				$sheet = $objPHPExcel->getActiveSheet();
+				$highestRow = $sheet->getHighestRow();
+				$highestCol = $sheet->getHighestColumn();
+				$sheetData = $sheet->rangeToArray("A1:$highestCol$highestRow", null, true, false, false);
 
 				$index = 0;
 				foreach ($sheetData as $key => $value) {
-					if ($key != 1) {
-						$check = $this->M_posisi->check_nama($value['B']);
+					if ($key != 0) {
+						$check = $this->M_posisi->check_nama($value['1']);
 
 						if ($check != 1) {
-							$resultData[$index]['nama'] = ucwords($value['B']);
+							$resultData[$index]['nama'] = ucwords($value['1']);
 						}
 					}
 					$index++;
@@ -169,7 +179,7 @@ class Posisi extends AUTH_Controller {
 				unlink('./assets/excel/' .$data['file_name']);
 
 				if (count($resultData) != 0) {
-					$result = $this->M_kota->insert_batch($resultData);
+					$result = $this->M_posisi->insert_batch($resultData);
 					if ($result > 0) {
 						$this->session->set_flashdata('msg', show_succ_msg('Data Posisi Berhasil diimport ke database'));
 						redirect('Posisi');
