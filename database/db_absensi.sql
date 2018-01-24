@@ -124,7 +124,6 @@ INSERT INTO `pegawai` (`id`, `nama`, `telp`, `id_kota`, `id_kelamin`, `id_posisi
 ('3', 'Mustofa Halim', '081330493322', 1, 1, 3, 1),
 ('4', 'Dody Ahmad Kusuma Jaya', '083854520015', 1, 1, 2, 1),
 ('5', 'Mokhammad Choirul Ikhsan', '085749535400', 3, 1, 2, 1),
-('7', 'Achmad Chadil Auwfar', '08984119934', 2, 1, 1, 1),
 ('8', 'Rizal Ferdian', '087777284179', 1, 1, 3, 1),
 ('9', 'Redika Angga Pratama', '083834657395', 1, 1, 3, 1),
 ('1', 'Hariyanto', '081233072122', 1, 1, 4, 1),
