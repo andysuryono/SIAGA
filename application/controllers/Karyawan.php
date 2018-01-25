@@ -8,7 +8,7 @@ class Karyawan extends CI_Controller {
 	}
 	
 	public function index() {
-		$session = $this->session->userdata('status');
+		$session = $this->session->userdata('status_karyawan');
 
 		if ($session == '') {
 			$this->load->view('karyawan/login');
