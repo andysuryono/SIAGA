@@ -27,13 +27,13 @@
   <body class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="<?php echo base_url(); ?>assets/index2.html"><b>SIAGA</b> Application</a>
+        <a href="<?php echo base_url(); ?>Auth"><b>SIAGA</b> Admin Application</a>
       </div>
 
       <!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">
-          Log in to start your session
+          Log in untuk melanjutkan sesi
         </p>
 
         <form action="<?php echo base_url('Auth/login'); ?>" method="post">
@@ -59,13 +59,10 @@
           </div>
         </form>
 
-        <!-- <div class="social-auth-links text-center">
-          <p>- OR -</p>
-          <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
-            Facebook</a>
-          <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
-            Google+</a>
-        </div> -->
+        <div class="social-auth-links text-center">
+          <p>- ATAU -</p>
+          <a href="<?php echo base_url(); ?>Karyawan" class="btn btn-block btn-google btn-flat text-center">Login sebagai Karyawan</a>
+        </div>
         <!-- /.social-auth-links -->
 
         <!-- <a href="#">I forgot my password</a><br>
