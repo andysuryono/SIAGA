@@ -19,6 +19,7 @@ class Absensi extends CI_Controller {
 	}
 
 	public function index() {
-		$this->load->view('karyawan/absensi');
+		$data = $this->session->userdata('userdata_karyawan');
+		$this->load->view('karyawan/absensi', $data);
 	}
 }
